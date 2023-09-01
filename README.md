@@ -1,3 +1,5 @@
+![](img/1.jpg) 
+
 # WebStick
 
 A ESP12E/F powered web server with limited NAS functionality
@@ -5,20 +7,30 @@ A ESP12E/F powered web server with limited NAS functionality
 ## Features
 
 - Basic Web Server
+
 - Directory View 
+
 - Cookie based login system
+
 - File Manager
+  
   - File Upload / Download (with multiple-file zip download support)
   
   - File Open, Cut and Copy
   
   - Support UTF-8 filename (32 bit length only, filename length depends on variable bytes used per char)
+
 - File Searching Tool
+  
   - Much slower than Google Search (Is this even a feature?)
+
 - System Information
+  
   - SD storage info
   - WiFi info
+
 - WebApps
+  
   - Music Player
   - Photo Viewier
   - Video Player
@@ -138,8 +150,6 @@ As you might have notice by now this system is hosted on a 1 USD MCU (ESP8266), 
 
 - Single admin session (cookie), due to limit in runtime memory (i.e. If you try to login from 2nd browser, the first browser will automatically logged out)
 
-
-
 ## License
 
 Backend Code (Arduino): MIT License
@@ -147,5 +157,3 @@ Backend Code (Arduino): MIT License
 Front-end Code (html files): CopyRight tobychui, All Right Reserved
 
 *(I strongly recommend anyone with ability to write a better UI than my system :D)*
-
-
