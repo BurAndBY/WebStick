@@ -150,6 +150,9 @@ As you might have notice by now this system is hosted on a 1 USD MCU (ESP8266), 
 
 - Single admin session (cookie), due to limit in runtime memory (i.e. If you try to login from 2nd browser, the first browser will automatically logged out)
 
+## Getting the Hardware
+You can place order at PCB printing service provider like [JLCPCB](https://bit.ly/3MBIWip) or get one from my [Tindie Store](https://www.tindie.com/products/tobychui/instant-webstick-a-usb-stick-web-server/)
+
 ## License
 
 Backend Code (Arduino): MIT License
