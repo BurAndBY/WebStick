@@ -158,6 +158,6 @@ Hardware Design (PCB files): CC BY-NC-SA
 
 Backend Code (Arduino): MIT License
 
-Front-end Code (html files): CopyRight tobychui, All Right Reserved
+Front-end Code (html files): AGPL
 
 *(I strongly recommend anyone with ability to write a better UI than my system :D)*
