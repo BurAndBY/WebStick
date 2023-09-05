@@ -154,6 +154,7 @@ As you might have notice by now this system is hosted on a 1 USD MCU (ESP8266), 
 You can place order at PCB printing service provider like [JLCPCB](https://bit.ly/3MBIWip) or get one from my [Tindie Store](https://www.tindie.com/products/tobychui/instant-webstick-a-usb-stick-web-server/)
 
 ## License
+Hardware Design (PCB files): CC BY-NC-SA
 
 Backend Code (Arduino): MIT License
 
