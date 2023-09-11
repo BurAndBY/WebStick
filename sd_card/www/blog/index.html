@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- HTML Meta Tags -->
+    <title>Welcome to My Blog</title>
+    <meta name="description" content="A personal blog hosted on WebStick!">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <style>
+        .imgwrapper{
+            max-height: 200px;
+            overflow: hidden;
+        }
+  </style>
+</head>
+<body>
+    <br>
+    <div class="ui text container">
+        <h2 class="ui header">
+            WebStick Blog
+            <div class="sub header">Welcome to this new personal blog of mine!</div>
+        </h2>
+        <div class="ui divider"></div>
+        <a class="ui basic icon button" href="../" title="Back to Home"><i class="home icon"></i></a>
+        <a class="ui basic icon button" href="../" title="Share"><i class="green share alternate icon"></i></a>
+        <a class="ui basic button adminOnly"><i class="blue add icon"></i> New Post</a>
+        <br><br>
+        <div class="posttable">
+            <div class="ui message">
+                <h4 class="ui header">
+                    <i class="blue question icon"></i>
+                    <div class="content">
+                      No Post
+                      <div class="sub header">It seems this is a brand new blog site!</div>
+                    </div>
+                  </h4>
+            </div>
+
+             
+            <div class="ui basic segment postObject">
+                <h4 class="ui header">
+                    <i class="blue map marker alternate icon"></i>
+                    <div class="content">
+                        11 Sep 2023
+                    </div>
+                </h4>
+                <div class="ui divider"></div>
+                <div class="adminOnly" style="position: absolute; top: 0.4em; right: 0.4em;">
+                    <a class="ui basic mini icon button" title="Edit Post"><i class="edit icon"></i></a>
+                    <button class="ui basic mini icon button" title="Remove Post"><i class="red trash icon"></i></button>
+                </div>
+                <div class="postContent">
+
+                </div>
+                <div class="ui divider"></div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="ui text container center aligned">
+        <div class="ui divider"></div>
+        <small>Proudly powered by <a href="https://hackaday.io/project/192618-instant-webstick-esp8266-web-server-nas">WebStick</a></small>
+    </div>
+	</div>
+    <script>
+        //Check the user has logged in
+        $.get("", function(data){
+            if (data == false){
+                //User cannot use admin function. Hide the buttons.
+                $(".adminOnly").hide();
+            }
+        });
+
+        //Load the list of post from the server side
+        function loadPostFromServer(){
+
+        }
+
+        //Load a markdown file from URL and render it to target element
+        function loadMarkdownToHTML(markdownURL, targetElement){
+            fetch(markdownURL).then( r => r.text() ).then( text =>{
+                var converter = new showdown.Converter();
+                
+                let targetHTML = converter.makeHtml(text);
+                console.log(targetHTML);
+                $(targetElement).html(targetHTML);
+            });
+        }
+
+        loadMarkdownToHTML("../../README.md", $(".postContent"));
+        loadPostFromServer();
+    </script>
+</body>
+</html>
